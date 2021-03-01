@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr" class="ios">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animés</title>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css"/>
+    <script defer src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script defer src="app.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+  <body>
+    <ion-app>
+
+        <ion-content >
+            <ion-header no-shadow no-border class="header" >
+                <h2>mang'Amanda</h2>
+                <ion-item-group class="flex">
+                    <div class="box-border">
+                        <div class="border-white">
+                            <div class="img-box"><img src="naruto02.jpg"></div>
+                        </div>
+                    </div>
+                </ion-item-group>
+            </ion-header>
+            <form id="form">
+                <ion-item id="error" color="red" style="display: none;"><ion-label></ion-label></ion-item>
+                    <ion-searchbar  placeholder="Search" class="input" id="anime" ></ion-searchbar>
+                <ion-item>
+                    <ion-label>Type</ion-label>
+                    <ion-select placeholder="Select One" id="select">
+                        <ion-select-option value="manga">Manga</ion-select-option>
+                        <ion-select-option value="anime">Animé</ion-select-option>
+                        <ion-select-option value="character">Characters</ion-select-option>
+                        <ion-select-option value="people">People</ion-select-option>
+                    </ion-select>
+                </ion-item>
+                <ion-button expand="block"color="secondary" type="submit">Search</ion-button>
+            </form>
+            <ul id="ul"></ul>
+          </ion-content>
+        <ion-footer class="footer">
+            <h4><a href="">manga-manda@contact.fr</a></h4>
+        </ion-footer>
+    </ion-app>
+  </body>
+</html>
