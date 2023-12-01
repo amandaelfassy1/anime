@@ -27,10 +27,10 @@ form.addEventListener("submit", (e) => {
    // return;
  // }
   axios
-      .get(`${base_url}/search/${select.value}?q=${anime.value}&page=1`)
+      .get(`${base_url}/${select.value}?q=${anime.value}&page=1`)
       .then((response) => {
-        console.log(response)
-        const resultat = response.data.results
+        console.log(response.data.data)
+        const resultat = response.data.data
         for(let data of resultat)
           {
             console.log(data)
@@ -39,7 +39,7 @@ form.addEventListener("submit", (e) => {
             li.innerHTML = `
             <ion-card id="display-div" color="secondary">
                 <ion-card-content >
-                    <img id="image" src="${data.image_url}" alt="">
+                    <img id="image" src="${data.images.jpg}" alt="">
                     <ion-card-title id="title">${data.name}</ion-card-title>
                     <ion-card-content id="url"><a href="${data.url}" >${data.url}</a></ion-card-content>
                 </ion-card-content>
@@ -52,7 +52,7 @@ form.addEventListener("submit", (e) => {
               li.innerHTML = `
             <ion-card id="display-div" color="secondary" >
                 <ion-card-content >
-                    <img id="image" src="${data.image_url}" alt="">
+                    <img id="image" src="${data.images.jpg}" alt="">
                     <ion-card-title id="title">${data.title}</ion-card-title>
                     <ion-card-content id="url"><a href="${data.url}" >${data.url}</a></ion-card-content>
                     <ion-card-content id="synopsis">Synopsis : ${data.synopsis}</ion-card-content>
@@ -81,8 +81,6 @@ form.addEventListener("submit", (e) => {
         errorDisplay.style.display = "none";
       })
       .catch((error) => {
-        displayDiv.style.display = "none";
-        errorDisplay.innerHTML = error.response.data.message;
-        errorDisplay.style.display = "block";
+     
       });
 });
