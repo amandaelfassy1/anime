@@ -5,7 +5,7 @@ let select = document.querySelector("#select");
 
 let errorDisplay = document.querySelector("#error");
 let displayDiv = document.querySelector("#display-div");
-const base_url = "https://api.jikan.moe/v3";
+const base_url = "https://api.jikan.moe/v4";
 const ul =document.querySelector("#ul");
 
 form.addEventListener("submit", (e) => {
